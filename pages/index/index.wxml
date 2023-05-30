@@ -1,9 +1,27 @@
 <!--index.wxml-->
 <view class="container">
   <view class="top">
-    
+    <view class="title">{{location}}</view>
+    <view class="subtitle">{{updateTime}}</view>
+    <view class="visual">
+      <view class="temperature">
+        {{dayTemperature}} ℃
+      </view>
+      <view class="weathericon">
+        <image src="{{weatherIcon}}" style="height: {{iconImageHeight}}rpx; width: {{iconImageHeight}}rpx;"/>
+      </view>
+    </view>
+    <view class="subtitle tips">{{tips}}</view>
   </view>
-  <view class="list">
-    
-  </view>
+
+  <scroll-view class="list" scroll-y style="height: {{scrollHeight}}rpx;">
+    <view wx:for="{{weatherArray}}" wx:key="fxDate">
+      <view class="list_item {{index % 2 == 0 ? 'list_item_alter' : ''}}">
+        <image src="{{item.iconDay}}" class="list_image"/>
+        <text class="list_weekday">{{item.weekday}}</text>
+        <text class="list_t_highest">{{item.tempMax}} ℃</text>
+        <text class="list_t_lowest">{{item.tempMin}} ℃</text>
+      </view>
+    </view>
+  </scroll-view>
 </view>

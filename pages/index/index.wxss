@@ -1,14 +1,107 @@
 /**index.wxss**/
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow-y: hidden;
+}
+
 .container {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  justify-content: top;
+  align-items: top;
 }
 
 .top {
+  flex-direction: column;
   flex: 0 0 40%;
   width: 100%;
+  background: linear-gradient(#4990e2, #87c1f1);
+}
+
+.title {
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  padding-top: 30px;
+  font-weight: 500;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  padding-top: 10px;
+  font-weight: 200;
+}
+
+.visual {
+  display: flex;
+  padding-top: 10px;
+}
+
+.temperature {
+  line-height: 160rpx;
+  text-align: center;
+  flex: 0.5;
+  font-size: 40px;
+  color: #fff;
+}
+
+.weathericon {
+  text-align: center;
+  flex: 0.5;
 }
 
 
+.list {
+  flex: 0 0 60%;
+  width: 100%;
+}
+
+.list_item {
+  background-color: #fff;
+  height: 75px;
+}
+
+.list_image {
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
+  float: left;
+}
+
+.list_weekday {
+  margin-top: 25px;
+  float: left;
+  margin-left: 10px;
+  color: #263344;
+}
+.list_t_highest {
+  margin-top: 25px;
+  float: right;
+  margin-right: 10px;
+  font-weight: 600;
+  color: #263344;
+}
+
+.list_t_lowest {
+  margin-top: 25px;
+  float: right;
+  margin-right: 10px;
+  color: #263344;
+}
+
+.list_item_alter {
+  background-color: #f6f9fe;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
