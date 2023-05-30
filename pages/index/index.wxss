@@ -1,0 +1,14 @@
+/**index.wxss**/
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.top {
+  flex: 0 0 40%;
+  width: 100%;
+}
+
+
