@@ -1,27 +1,62 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="top">
-    <view class="title">{{location}}</view>
-    <view class="subtitle">{{updateTime}}</view>
-    <view class="visual">
-      <view class="temperature">
-        {{dayTemperature}} ℃
-      </view>
-      <view class="weathericon animate__animated animate__bounce animate__delay-2s">
-        <image src="{{weatherIcon}}" style="height: {{iconImageHeight}}rpx; width: {{iconImageHeight}}rpx;"/>
-      </view>
+  <view class="location keepHeight">
+    <image src="/images/icons/location.svg" style="height: 40rpx; width: 40rpx;" />
+    <view class="lTitle">
+      {{location}}
     </view>
-    <view class="subtitle tips">{{tips}}</view>
   </view>
 
-  <scroll-view class="list" scroll-y style="height: {{scrollHeight}}rpx;">
-    <view wx:for="{{weatherArray}}" wx:key="fxDate">
-      <view class="list_item {{index % 2 == 0 ? 'list_item_alter' : ''}}">
-        <image src="{{item.iconDay}}" class="list_image"/>
-        <text class="list_weekday">{{item.weekday}}</text>
-        <text class="list_t_highest">{{item.tempMax}} ℃</text>
-        <text class="list_t_lowest">{{item.tempMin}} ℃</text>
+  <view class="top keepHeight">
+    <image src="{{weatherIcon}}" style="height: {{iconSize}}rpx; width: {{iconSize}}rpx; " />
+    <view class="tem">
+      {{weatherTem}}°
+    </view>
+    <view class="title">
+      {{weatherText}}
+    </view>
+    <view class="title">
+      Max:{{maxTem}}° Min:{{minTem}}°
+    </view>
+  </view>
+
+  <view class="infoContainer keepHeight">
+    <view class="info">
+      <image src="/images/icons/wendu.svg" style="height: {{infoIconSize}}rpx; width: {{infoIconSize}}rpx;" />
+      <view class="number">{{feelsLike}}°</view>
+    </view>
+    <view class="info">
+      <image src="/images/icons/shidu.svg" style="height: {{infoIconSize}}rpx; width: {{infoIconSize}}rpx;" />
+      <view class="number" style="padding-left: 10rpx;">{{humidity}}%</view>
+    </view>
+    <view class="info">
+      <image src="/images/icons/fengsu.svg" style="height: {{infoIconSize}}rpx; width: {{infoIconSize}}rpx;" />
+      <view class="number">{{windSpeed}} km/h</view>
+    </view>
+  </view>
+
+  <view class="hourContainer keepHeight">
+    <view class="hourTitle">今天</view>
+    <scroll-view class="hourForecast" scroll-x>
+      <view class="hourInfo">
+        <view class="hourTem">29℃</view>
+        <image src="/images/icons/900.svg" style="height: 70rpx; width: 70rpx" />
+        <view class="time">15:00</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="daysForecastContainer keepHeight">
+    <view class="daysForecast">
+      <view class="daysTitle">未来天气</view>
+      <view class="test">
+        <view class="weekday">星期一</view>
+        <image src="/images/icons/515.svg" style="height: 80rpx; width: 80rpx;"/>
+        <view class="dayMax">
+          13℃
+          <view class="dayMin">10℃</view>
+        </view>
       </view>
     </view>
-  </scroll-view>
+  </view>
 </view>
