@@ -7,7 +7,7 @@
       <view class="temperature">
         {{dayTemperature}} ℃
       </view>
-      <view class="weathericon">
+      <view class="weathericon animate__animated animate__bounce animate__delay-2s">
         <image src="{{weatherIcon}}" style="height: {{iconImageHeight}}rpx; width: {{iconImageHeight}}rpx;"/>
       </view>
     </view>

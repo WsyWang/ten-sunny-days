@@ -1,2 +1,2 @@
 /**app.wxss**/
-
+@import './utils/animate.wxss'

@@ -9,7 +9,7 @@ Page({
     weatherArray: [],
     iconImageHeight: 160,
     dayTemperature: "N/A",
-    weatherIcon: "/images/icons/100-fill.svg",
+    weatherIcon: "/images/icons/100.svg",
     tips: "loading......",
     updateTime: "loading",
   },
@@ -68,7 +68,7 @@ Page({
                     that.setData({
                       dayTemperature: res.data.now.temp,
                       updateTime: updateTime,
-                      weatherIcon: "/images/icons/"+ res.data.now.icon +"-fill.svg"
+                      weatherIcon: "/images/icons/"+ res.data.now.icon +"-fill.svg",
                     })
                   }
                 })
