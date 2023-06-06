@@ -38,10 +38,10 @@
   <view class="hourContainer keepHeight">
     <view class="hourTitle">今天</view>
     <scroll-view class="hourForecast" scroll-x>
-      <view class="hourInfo">
-        <view class="hourTem">29℃</view>
-        <image src="/images/icons/900.svg" style="height: 70rpx; width: 70rpx" />
-        <view class="time">15:00</view>
+      <view class="hourInfo" wx:for="{{hourWeatherArray}}" wx:key="fxTime">
+        <view class="hourTem">{{item.temp}}℃</view>
+        <image src="/images/icons/{{item.icon}}.svg" style="height: 70rpx; width: 70rpx" />
+        <view class="time">{{item.fxTime}}</view>
       </view>
     </scroll-view>
   </view>
@@ -49,12 +49,12 @@
   <view class="daysForecastContainer keepHeight">
     <view class="daysForecast">
       <view class="daysTitle">未来天气</view>
-      <view class="test">
-        <view class="weekday">星期一</view>
-        <image src="/images/icons/515.svg" style="height: 80rpx; width: 80rpx;"/>
+      <view class="test" wx:for="{{weatherArray}}" wx:key="fxDate">
+        <view class="weekday">{{item.weekDay}}</view>
+        <image src="/images/icons/{{item.iconDay}}.svg" style="height: 70rpx; width: 70rpx;"/>
         <view class="dayMax">
-          13℃
-          <view class="dayMin">10℃</view>
+          {{item.tempMax}}℃
+          <view class="dayMin">{{item.tempMin}}℃</view>
         </view>
       </view>
     </view>
